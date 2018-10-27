@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1><a href="/">Registro Rescatados</a></h1>
+    </div>
+    <hr>
+    {{ RegistroRescatado }}
+    <hr>
+    {% for RegistroRescatados in RegistroRescatado %}
+        {{ RegistroRescatado }}
+    {% endfor %}
+    <hr>
+    {% for RegistroRescatados in RegistroRescatado %}
+    <div>
+        <p>published: {{ RegistroRescatado.published_date }}</p>
+        <h1><a href="">{{ RegistroRescatado.title }}</a></h1>
+        <p>{{ RegistroRescatado.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
